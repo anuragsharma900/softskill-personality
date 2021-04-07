@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Find your Personality</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script type="text/javascript" src = "{{ url_for('static', filename='js/main.js') }}"></script>
+		<link rel= "stylesheet" type= "text/css" href="{{ url_for('static',filename='css/main.css') }}"/>
+	</head>
+	<body style="background-color:powderblue;">
+
+		<!-- Header -->
+			<header id="header">
+				<h3>Find your Personality <span>by The Myers–Briggs Type Indicator (MBTI) </h3>
+				
+				<image src="{{url_for('static',filename = 'images/front.png')}}" ></div>
+						
+			</header>
+
+		<!-- Main -->
+			<section id="main">
+				<div class="inner">
+
+				<!-- One -->
+					<section id="one" class="wrapper style1">
+
+						
+						<header class="special">
+							<h2>Simple draft to check Personality trait from text cases</h2>
+							<form name='form1' action="{{ url_for('predict') }}" method="POST" id="usrform">
+								<div>
+									<textarea cols="50" rows="5" style="color:#003399;white-space:pre-wrap;" name="message" id="text_id" >	{{ message }}				                    				
+									</textarea>Enter text here...
+								</div>
+								<div>
+									
+								 	<input onclick='input1()' type="button" value="Generate Text Case:1">
+									<input onclick='input2()' type="button" value="Generate Text Case:2">
+								</div>
+								<div style="color:#003399;">
+								 	<input type="submit" value="Find Personality">
+
+									<br/> Result:
+									<br/>{{ result }}
+								</div>
+ 								 
+								 
+							</form>
+						</header>
+					
+							
+						
+					</section>
+
+				
+
+
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Untitled. All rights reserved. Images <a href="https://unsplash.com">Unsplash</a> Design <a href="https://templated.co">TEMPLATED</a>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				function input1(){
+    				var text = "Private or shy people who struggle with loneliness issues often find it a challenge to increase their socialization because of intense feelings of anxiety or selfdefeating beliefs Such people should consult our sections on changing behaviors and thoughts and on changing moods above where methods for overcoming social anxiety such as cognitive restructuring and relaxation are providedKeep in mind that it is the quality of your relationships and not their number that determine what benefits you will receive from socializing It is the deeper caring relationships that provide benefits and not the shallower temporary ones For this reason even if you are good at socializing take steps to deepen your relationships Do things for other people and test to see whether they reciprocate Pursue those relationships which do reciprocate your investment and avoid those which do not Risk letting a few special people know your intimate thoughts Do this slowly so as not to overwhelm Relationships have to be reciprocal to become real friendships Giveandtake is essential";
+    				document.forms.form1.message.value = text;
+				}
+				function input2(){
+    				var text = "Initially gender inequality has effects on the scale of population According to statistics of the General office for population family planning because of the discrimination of genders the number of newborn boys and girls is unequal To some people the hope to have a son loses the balance between two genders Unfortunately this situation has occurred for such a long time so the impacts of it in the population are rather big As report of Ministry of public health it is estimated that despite the attempt to reduce the fluctuation between the birth of boys and girls in 2020 there will be 43 million men more than women Minister of ministry of public health statement cited in Phuong 2012 said that if this trend still keeps on going it will lead to quite a few consequences in security and the order of society before marriage age of children Now we can see an obvious consequence among the Chinese According to a Blue Paper on Society released by the China Academy of Social Science there will run short of brides in ten years because of severe gender imbalance among young people particularly among under 19aged people Tang 2010Secondly the discrimination of genders leads to some consequences in education Education is a important tool is the key to the growth of human And no matter what gender a person is he has right to expose to education like others Chaudhry  Rahman 2009 p175 in reporting World Bank 2001 Schultz 2002 Strauss and Thomas 1995 King and Hill 1993 World Bank 2007 stated that “there are many empirical evidences that increase in female education improves human development outcomes such as child survival health and schooling” However “lower female education had a negative impact on economic growth as it lowered the average level of human capital” Klasen 2002 cited in Chaudhry  Rahman 2009 p175 World Bank in 2001 reported that in almost all poor countries there is a high trend of educational impacts of gender inequality In poverty girls are more likely to be influenced to approach education";
+    				document.forms.form1.message.value = text;
+				}      
+			</script>
+
+	</body>
+</html>
