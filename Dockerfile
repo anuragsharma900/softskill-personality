@@ -3,7 +3,7 @@ WORKDIR /app
 
 
 # We copy just the requirements.txt first to leverage Docker cache
-
+RUN apt-get update && apt-get install -y python3.6 --no-install-recommends
 RUN pip install --upgrade pip
 COPY requirements.txt .
 COPY . /app
