@@ -10,8 +10,10 @@ RUN pip install scipy
 RUN pip install scikit-learn==0.23.2
 
 COPY requirements.txt .
-COPY . /app
+
 RUN pip install -r requirements.txt
+
+COPY . /app
 EXPOSE 5001
 COPY . /app
 RUN ["chmod", "+x", "app.py"]
