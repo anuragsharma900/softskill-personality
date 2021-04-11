@@ -3,7 +3,8 @@ WORKDIR /app
 
 
 # We copy just the requirements.txt first to leverage Docker cache
-pip install --upgrade pip
+
+RUN pip install --upgrade pip
 COPY requirements.txt .
 COPY . /app
 RUN pip install -r requirements.txt
