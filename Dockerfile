@@ -11,5 +11,5 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY . /app
-
+RUN ["chmod", "+x", "/app/app.py"]
 CMD [ "/app/app.py" ]
