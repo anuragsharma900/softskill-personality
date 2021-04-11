@@ -15,4 +15,4 @@ RUN pip install -r requirements.txt
 COPY . /app
 RUN ["chmod", "+x", "/app/app.py"]
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
-CMD [ "/app/app.py" ]
+CMD [ "python app.py"]
