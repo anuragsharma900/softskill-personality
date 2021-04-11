@@ -7,7 +7,12 @@ RUN apt-get update -y && \
 # We copy just the requirements.txt first to leverage Docker cache
 COPY requirements.txt 
 
-COPY . /app
+
+COPY ./requirements.txt /app/requirements.txt
+
+
 RUN pip install -r requirements.txt
 
-CMD ["python", "./app.py"]
+COPY . /app
+
+CMD [ "app.py" ]
