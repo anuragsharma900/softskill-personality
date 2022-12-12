@@ -2,7 +2,7 @@ FROM python:latest
 WORKDIR /app
 
 
-# We copy just the requirements.txt first to leverage Docker cache
+# We copy just the requirements.txt first to leverage Docker cache to work
 
 RUN pip install --upgrade pip
 RUN pip install numpy
