@@ -15,7 +15,9 @@ variables:
   imageRepository: 'softskillpersonality'
   containerRegistry: 'myacrrepoimages.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: '$(Build.BuildId)'
+  tag: 
+    latest
+    '$(Build.BuildId)'
 
   # Agent VM image name
   
@@ -51,6 +53,6 @@ stages:
         script: |
           docker kill softskill
           docker rm softskill
-          docker pull $(containerRegistry)/$(imageRepository):$(tag)
+          docker pull $(containerRegistry)/$(imageRepository):19
           docker run --publish 5001:5001 --name softskill $(containerRegistry)/$(imageRepository):$(tag)
-
+          docker cp softskill:/app/'Soft Skill .pptx' ./soft_container/
