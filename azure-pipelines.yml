@@ -55,4 +55,5 @@ stages:
           docker rm softskill
           docker pull $(containerRegistry)/$(imageRepository):latest
           docker run -d --publish 5001:5001 --name softskill $(containerRegistry)/$(imageRepository):latest
+          sleep 9
           docker cp softskill:/app/'Soft Skill .pptx' ./soft_container/
