@@ -7,7 +7,7 @@ WORKDIR /app
 RUN pip install --upgrade pip
 RUN pip install numpy
 RUN pip install scipy
-RUN pip install scikit-learn==0.23.2
+RUN pip install scikit-learn>0.23.2
 
 COPY requirements.txt .
 
