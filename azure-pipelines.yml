@@ -56,3 +56,11 @@ stages:
           docker pull $(containerRegistry)/$(imageRepository):latest
           docker run -d --publish 5001:5001 --name softskill $(containerRegistry)/$(imageRepository):latest
           docker cp softskill:/app/'Soft Skill .pptx' /home/azureuser/soft_container/
+      
+    - task: CopyFilesOverSSH@0
+      inputs:
+        sshEndpoint: 'CopyFIleServer'
+        sourceFolder: '/home/azureuser/soft_container/'
+        contents: '*.pptx'
+        targetFolder: '/home/azureuser/container_file/'
+        readyTimeout: '20000'
