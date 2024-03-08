@@ -20,5 +20,5 @@ RUN ["chmod", "+x", "app.py"]
 CMD ["gunicorn", "--bind", "0.0.0.0:5001", "app:app"]
 
 
-ENTRYPOINT [ "python" ]
+ENTRYPOINT [ "python3" ]
 CMD [ "app.py" ]
