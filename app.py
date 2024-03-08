@@ -1,5 +1,6 @@
 
 from flask import Flask, request, jsonify, render_template, url_for
+from collections.abc import Mapping
 import pickle
 
 #load the model
