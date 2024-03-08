@@ -54,5 +54,5 @@ stages:
           docker kill softskill
           docker rm softskill
           docker pull $(containerRegistry)/$(imageRepository):latest
-          docker run --publish 5001:5001 --name softskill $(containerRegistry)/$(imageRepository):latest
+          docker run -d --publish 5001:5001 --name softskill $(containerRegistry)/$(imageRepository):latest
           docker cp softskill:/app/'Soft Skill .pptx' ./soft_container/
